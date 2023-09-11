@@ -201,7 +201,7 @@ void bank::del(){
         break;
         case 2:
         total=0;
-        cout<<"All record is deleted"<<endl;
+        cout<<"All record is deleted";
         break;
     }
 }
