@@ -1,4 +1,6 @@
+//does not using class and object
 #include <iostream>
+#include<conio.h>
 #include <vector>
 #include <string>
 #include<fstream>
@@ -51,13 +53,13 @@ void loadData(vector<Student>& students) {
 
 void editStudent(vector<Student>& students) {
     clrscr();
-    int index;
-    print_with_delay("\t\t\tEnter the index of the student you want to edit: ",30,false);
-    cin >> index;
+    int rollNumber;
+    print_with_delay("\t\t\tEnter RollNUmber of  the student you want to edit: ",30,false);
+    cin >> rollNumber;
 
-    if (index >= 0 && index < students.size()) {
-        Student& student = students[index];
-        cout << "\t\t\t\tEditing student at index: " << index << endl;
+    if (rollNumber >= 0 && rollNumber < students.size()) {
+        Student& student = students[rollNumber];
+        cout << "\t\t\t\tEditing student at rollNumber: " << rollNumber << endl;
         print_with_delay("\t\t\t\tEnter new student name: ",40,false);
         cin >> student.name;
         print_with_delay("\t\t\t\tEnter new student rollnumber: ",40,false);
@@ -87,21 +89,21 @@ void editStudent(vector<Student>& students) {
         cin >> student.branch;
         print_with_delay("\t\t\t....Student edited successfully!...",30,false);
     } else {
-        cout << "\t\t\tInvalid index. No student found at index " << index << endl;
+        cout << "\t\t\tInvalid rollNumber. No student found at rollNumber " << rollNumber << endl;
     }
 }
 
 
 void deleteStudent(vector<Student>& students) {
     clrscr();
-    int index;
-    print_with_delay("\t\t\tEnter the index of the student you want to delete: ",40,false);
-    cin >> index;
-    if (index >= 0 && index < students.size()) {
-        students.erase(students.begin() + index);
+    int rollNumber;
+    print_with_delay("\t\t\tEnter the rollNumber of the student you want to delete: ",40,false);
+    cin >> rollNumber;
+    if (rollNumber >= 0 && rollNumber < students.size()) {
+        students.erase(students.begin() + rollNumber);
         print_with_delay("\t\t\t\tStudent deleted successfully!",30,false);
     } else {
-        cout << "\t\t\tInvalid index. No student found at index " << index << endl;
+        cout << "\t\t\tInvalid rollNumber. No student found at rollNumber " << rollNumber << endl;
     }
 }
     void hostelmanager(){
@@ -273,8 +275,7 @@ int main() {
     clrscr();
     front();
     char ch;
-     print_with_delay("\n\n\t\t\t\tPLEASE.ENTER ANY KEY",30,false);
-     cin>>ch;
+     ch=getch();
     while (true) {
         clrscr();
         int ch;
